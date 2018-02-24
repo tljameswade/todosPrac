@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Todo = (text) => {
+const Todo = ({text, toggle, completed}) => {
+
     return(
-        <li>{text}</li>
+        <li onClick={toggle} style={{
+            textDecoration: completed ? 'line-through' : 'none'
+        }}>{text}</li>
     );
 }
 

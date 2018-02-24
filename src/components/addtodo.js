@@ -4,6 +4,7 @@ import { add_to_do } from '../actions/actions';
 
 const Addtodo = ({addtodo}) => {
     let inputVal;
+
     return (
         <div>
             <form onSubmit={ e => {
@@ -12,7 +13,7 @@ const Addtodo = ({addtodo}) => {
                     return;
                 }
                 addtodo(inputVal.value);
-                inputVal = '';
+                inputVal.value = '';
             }}>
             <input type="text" ref={node => inputVal = node} />
             <input type="submit" value="Add a new todo" />

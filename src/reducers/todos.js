@@ -7,9 +7,17 @@ export const todos = (state = [], action) => {
                 ...state,
                 {
                     id: uuid.v1(),
-                    text: action.payload.text
+                    text: action.payload.text,
+                    completed: false
                 }
             ]
+        case 'TOGGLE_TO_DO':
+            return state.map(todo => {
+                    if (todo.id.toString() === action.payload.id.toString()) {
+                        todo.completed = true;
+                    }
+                    return todo;
+                });
         default:
             return state;
     }
