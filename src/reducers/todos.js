@@ -14,7 +14,7 @@ export const todos = (state = [], action) => {
         case 'TOGGLE_TO_DO':
             return state.map(todo => {
                     if (todo.id.toString() === action.payload.id.toString()) {
-                        todo.completed = true;
+                        todo.completed = !todo.completed;
                     }
                     return todo;
                 });
