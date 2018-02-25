@@ -6,9 +6,11 @@ import { toggle_to_do } from '../actions/actions';
 const Todos = ({ todos, toggle }) => {
     return(
         <div>
+            <ul className="list-group">
             {todos.map(todo => (
                 <Todo key={todo.id} text={todo.text} completed={todo.completed} toggle={() => toggle(todo.id)}/>
             ))}
+            </ul>
         </div>
     );
 }

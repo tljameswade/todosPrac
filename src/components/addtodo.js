@@ -6,8 +6,8 @@ const Addtodo = ({addtodo}) => {
     let inputVal;
 
     return (
-        <div>
-            <form onSubmit={ e => {
+        <div style={{margin: "5px 5px 5px 5px"}}>
+            <form className="form-inline justify-content-center" onSubmit={ e => {
                 e.preventDefault();
                 if (!inputVal.value) {
                     return;
@@ -15,8 +15,12 @@ const Addtodo = ({addtodo}) => {
                 addtodo(inputVal.value);
                 inputVal.value = '';
             }}>
-            <input type="text" ref={node => inputVal = node} />
-            <input type="submit" value="Add a new todo" />
+                <div className="form-group mb-2">
+                    <label htmlFor="addtodo" className="sr-only">New To Do</label>
+                    <input type="text" className="form-control" id="addtodo" placeholder="A New Task" 
+                        ref={node => inputVal = node} />
+                </div>
+                <button type="submit" className="btn btn-primary mb-2">Add a new todo task</button>
             </form>
         </div>
     );
