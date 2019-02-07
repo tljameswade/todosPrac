@@ -16,6 +16,7 @@ class App extends Component {
         <Links/>
         <Todos/>
         <Addtodo/>
+        <div>Wang Jing</div>
       </div>
     );
   }
